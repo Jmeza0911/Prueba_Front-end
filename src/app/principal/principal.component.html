@@ -1,0 +1,79 @@
+ <!-- ANIMATE CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+
+ <header>
+
+  <div class="contenedor header">
+
+    <div class="logo">
+      <img class="header__logo-img" src="./assets/imagenes/icono_header.png" alt="">
+    </div>
+
+    <div class="titulo">
+      <h1 class="header__titulo-heading">To<span class="titulo__span">Donut</span></h1>
+    </div>
+
+  </div>
+
+
+</header>
+
+
+<body>
+
+  <div class="contenedor listado__tareas">
+
+    <div class="contenedor organizador">
+      <h3 class="organizador__titulo"> Registro de tareas</h3>
+        <form class="contenedor formulario">
+
+          <p>
+            <label class="formulario__label ">Nombre: </label>
+            <input class="formulario__input"type="text">
+          </p>
+
+          <p>
+            <label class="formulario__label">Acción: </label>
+            <input class="formulario__input" type="text" >
+          </p>
+
+          <p>
+            <label class="formulario__label">Responsable: </label>
+            <input class="formulario__input" type="text">
+          </p>
+
+          <p>
+            <label class="formulario__label">Duración: </label>
+            <input class="formulario__input" type="text">
+          </p>
+
+          <p class="formulario bloque">
+            <label class="formulario__label">Estado: </label>
+            <select class="formulario__select">
+                <option selected>Inicio</option>
+                <option selected>En progreso</option>
+                <option selected>En revisión</option>
+                <option selected>Finalizada</option>
+                <option selected>Seleccione...</option>
+            </select>
+          </p>
+
+            <P class="bloque">
+              <button class="boton__crear"
+                    type="submit"
+                    routerLink="/ListadoTareas">
+                    Crear
+                    <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" >
+            </button>
+
+
+            </P>
+
+        </form>
+      </div>
+
+  </div>
+
+
+</body>

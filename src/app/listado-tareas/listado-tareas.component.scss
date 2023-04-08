@@ -1,0 +1,32 @@
+table{
+  margin: 3rem 2rem;
+
+}
+
+h1{
+  margin: 2rem 2rem;
+}
+.botones{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5rem;
+  width: 3rem;
+  height: 1rem;
+  font-size: 5px;
+  text-align: center;
+  background-color: rgba(28, 224, 143, 0.938);
+  border:none;
+  border-radius: 0.3rem;
+  color: azure;
+
+
+}
+
+.boton__editar-imagen{
+  margin-left: 0.3rem;
+  width: 1rem;
+}
+.boton__eliminar{
+  background-color: #d82c2cc4;
+}
