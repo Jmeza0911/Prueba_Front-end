@@ -1,26 +1,16 @@
-<h1>Listado de tareas</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Acción</th>
-      <th>Responsable</th>
-      <th>Duración</th>
-      <th>Estado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>tumase</td>
-      <td>tumase</td>
-      <td>tumase</td>
-      <td>tumase</td>
-      <td>tumase</td>
-      <td><button class=" botones boton__editar" type="button"> Editar
-        <img class="boton__editar-imagen" src="./assets/imagenes/doughnut.png" alt="">
-      </button></td>
-      <td><button class=" botones boton__eliminar" type="button"> Eliminar</button></td>
-    </tr>
-  </tbody>
-</table>
+<div class="card" style="width: 15rem;">
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary mb-2" >Nueva tarjeta <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" ></a>
+    <button (click)="editar()" class="btn btn-warning mb-2">Editar  <img class="boton__editar-imagen" src="./assets/imagenes/doughnut.png" alt=""></button>
+    <button (click)="eliminar()" class="btn btn-danger mb-2">Eliminar <img class="boton__eliminar-imagen" src="./assets/imagenes/boton_eliminar.png" alt=""></button>
+  </div>
+</div>
+
+
+
+
+
+

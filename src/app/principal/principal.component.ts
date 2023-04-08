@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import { FormBuilder,FormGroup } from '@angular/forms';
+import { AppState } from '../app.reducer';
+import { Store } from '@ngrx/store';
+import * as actions from './principal.actions';
+
+
+
 
 @Component({
   selector: 'app-principal',
@@ -8,7 +15,21 @@ import { Component } from '@angular/core';
 export class PrincipalComponent {
 
 
+  constructor(private fb : FormBuilder,
+              private store : Store<AppState>){}
+
+  miFormulario : FormGroup = this.fb.group({
+    nombre : [''],
+    accion : [''],
+    responsable : [''],
+    duracion : [''],
+    estado : ['']
+
+  })
   guardar(){
 
+    // this.store.dispatch(actions.crearTarea(this.miFormulario.value) );
+
+    console.log(this.miFormulario.value)
   }
 }

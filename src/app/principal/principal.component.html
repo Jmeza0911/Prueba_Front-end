@@ -26,44 +26,47 @@
 
     <div class="contenedor organizador">
       <h3 class="organizador__titulo"> Registro de tareas</h3>
-        <form class="contenedor formulario">
+        <form  (ngSubmit)="guardar()"
+              [formGroup]="miFormulario"
+               class="contenedor formulario">
 
           <p>
             <label class="formulario__label ">Nombre: </label>
-            <input class="formulario__input"type="text">
+            <input class="formulario__input"type="text" formControlName="nombre">
           </p>
 
           <p>
             <label class="formulario__label">Acción: </label>
-            <input class="formulario__input" type="text" >
+            <input class="formulario__input" type="text" formControlName="accion">
           </p>
 
           <p>
             <label class="formulario__label">Responsable: </label>
-            <input class="formulario__input" type="text">
+            <input class="formulario__input" type="text" formControlName="responsable">
           </p>
 
           <p>
             <label class="formulario__label">Duración: </label>
-            <input class="formulario__input" type="text">
+            <input class="formulario__input" type="text" formControlName="duracion">
           </p>
 
           <p class="formulario bloque">
             <label class="formulario__label">Estado: </label>
-            <select class="formulario__select">
-                <option selected>Inicio</option>
-                <option selected>En progreso</option>
-                <option selected>En revisión</option>
-                <option selected>Finalizada</option>
-                <option selected>Seleccione...</option>
+            <select formControlName="estado"  class="formulario__select">
+                <option value="1" selected>Inicio</option>
+                <option value="2" selected>En progreso</option>
+                <option value="3" selected>En revisión</option>
+                <option value="4" selected>Finalizada</option>
+                <option value="5" selected>Seleccione...</option>
             </select>
           </p>
 
             <P class="bloque">
               <button class="boton__crear"
+                    (click)="guardar()"
                     type="submit"
                     routerLink="/ListadoTareas">
-                    Crear
+                    Crear Tarea
                     <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" >
             </button>
 
