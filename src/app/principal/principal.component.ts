@@ -23,13 +23,10 @@ export class PrincipalComponent {
     accion : [''],
     responsable : [''],
     duracion : [''],
-    estado : ['']
+    estado : ['5']
 
   })
   guardar(){
-
-    // this.store.dispatch(actions.crearTarea(this.miFormulario.value) );
-
-    console.log(this.miFormulario.value)
+    this.store.dispatch(actions.crearTarea(this.miFormulario.value) );
   }
 }

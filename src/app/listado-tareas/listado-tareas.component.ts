@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AppState } from '../app.reducer';
 import { Store } from '@ngrx/store';
-import * as actions from '../principal/principal.actions';
-import { FormControl } from '@angular/forms';
+import { AppState } from '../app.reducer';
 import { Tareas } from '../principal/models/tareas.model';
+
 
 
 
@@ -14,29 +12,30 @@ import { Tareas } from '../principal/models/tareas.model';
   templateUrl: './listado-tareas.component.html',
   styleUrls: ['./listado-tareas.component.scss']
 })
-export class ListadoTareasComponent implements OnInit{
+export class ListadoTareasComponent implements OnInit {
 
+  listadoTareas: Tareas[] = [];
 
-  listadoTareas: Tareas[] =[]
+  constructor(private store : Store<AppState>){
 
-  constructor(private store:Store<AppState>){ }
+  }
+
 
   ngOnInit(): void {
 
-    // this.store.subscribe( {tareas} => {
-    //   	this.listadoTareas = tareas
-    // });
+    this.store.select('tareas')
+    .subscribe((tareas)=> this.listadoTareas=tareas)
 
-  }
 
-  editar(){
+    };
 
-  }
-  eliminar(){
-    // this.store.dispatch( actions.borrarTarea({id:this.}) );
-  }
 
-  }
+    tumae(){
+      console.log(this.listadoTareas)
+    }
+}
+
+
 
 
 

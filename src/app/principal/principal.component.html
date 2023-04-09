@@ -53,11 +53,11 @@
           <p class="formulario bloque">
             <label class="formulario__label">Estado: </label>
             <select formControlName="estado"  class="formulario__select">
-                <option value="1" selected>Inicio</option>
-                <option value="2" selected>En progreso</option>
-                <option value="3" selected>En revisión</option>
-                <option value="4" selected>Finalizada</option>
-                <option value="5" selected>Seleccione...</option>
+                <option value="Inicio" selected>Inicio</option>
+                <option value="En Progreso" selected>En progreso</option>
+                <option value="QA" selected>En revisión</option>
+                <option value="Finalizada" selected>Finalizada</option>
+                <option value="5"selected>Seleccione...</option>
             </select>
           </p>
 
@@ -65,7 +65,7 @@
               <button class="boton__crear"
                     (click)="guardar()"
                     type="submit"
-                    routerLink="/ListadoTareas">
+                    routerLink="/listado-tareas">
                     Crear Tarea
                     <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" >
             </button>

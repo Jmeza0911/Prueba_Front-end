@@ -1,16 +1,15 @@
+<h1>
+  Listado Tareas
+</h1>
 
-<div class="card" style="width: 15rem;">
-  <div class="card-body">
-    <h5 class="card-title"></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary mb-2" >Nueva tarjeta <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" ></a>
-    <button (click)="editar()" class="btn btn-warning mb-2">Editar  <img class="boton__editar-imagen" src="./assets/imagenes/doughnut.png" alt=""></button>
-    <button (click)="eliminar()" class="btn btn-danger mb-2">Eliminar <img class="boton__eliminar-imagen" src="./assets/imagenes/boton_eliminar.png" alt=""></button>
+
+<div class="tareas__list">
+
+  <app-items-tareas *ngFor="let tarea of listadoTareas"
+                      [tarea] ="tarea">
+    </app-items-tareas>
+
   </div>
-</div>
 
-
-
-
-
+<a href="#" class="btn btn-primary mb-2" >Nueva tarjeta <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" ></a>
 
