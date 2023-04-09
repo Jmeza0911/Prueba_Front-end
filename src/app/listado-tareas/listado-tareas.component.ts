@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducer';
 import { Tareas } from '../principal/models/tareas.model';
 import * as actions from '../principal/principal.actions'
+import Swal from 'sweetalert2'
 
 
 
@@ -32,6 +33,11 @@ export class ListadoTareasComponent implements OnInit {
 
     eliminarTodos(){
       this.store.dispatch( actions.borrarTodos() );
+      Swal.fire({
+      title: 'Se han eliminado todas las tarjetas!!',
+      icon: 'error',
+    })
+
     }
 
 }

@@ -32,27 +32,27 @@
 
             <p>
               <label class="formulario__label ">Nombre: </label>
-              <input class="formulario__input"type="text" formControlName="nombre" maxlength="100">
+              <input class="formulario__input"type="text" formControlName="nombre" maxlength="100" autocomplete="off">
             </p>
 
             <p>
               <label class="formulario__label">Acción: </label>
-              <input class="formulario__input" type="text" formControlName="accion" maxlength="100">
+              <input class="formulario__input" type="text" formControlName="accion" maxlength="100" autocomplete="off">
             </p>
 
             <p>
               <label class="formulario__label">Responsable: </label>
-              <input class="formulario__input" type="text" formControlName="responsable" maxlength="100">
+              <input class="formulario__input" type="text" formControlName="responsable" maxlength="100" autocomplete="off">
             </p>
 
             <p>
               <label class="formulario__label">Duración: </label>
-              <input class="formulario__input" type="text" formControlName="duracion" maxlength="100">
+              <input class="formulario__input" type="text" formControlName="duracion" maxlength="100" autocomplete="off">
             </p>
 
             <p class="formulario bloque">
               <label class="formulario__label">Estado: </label>
-              <select formControlName="estado"  class="formulario__select">
+              <select formControlName="estado"  class="formulario__select" >
                   <option value="Inicio" selected>Inicio</option>
                   <option value="En Progreso" selected>En progreso</option>
                   <option value="QA" selected>En revisión</option>
@@ -64,8 +64,7 @@
               <P class="bloque">
                 <button class="boton__crear"
                       (click)="guardar()"
-                      type="submit"
-                      routerLink="/listado-tareas">
+                      type="submit">
                       Crear Tarea
                       <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" >
               </button>

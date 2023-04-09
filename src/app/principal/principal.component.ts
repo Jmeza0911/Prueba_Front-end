@@ -3,6 +3,8 @@ import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { AppState } from '../app.reducer';
 import { Store } from '@ngrx/store';
 import * as actions from './principal.actions';
+import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 
 
@@ -16,7 +18,8 @@ export class PrincipalComponent {
 
 
   constructor(private fb : FormBuilder,
-              private store : Store<AppState>){}
+              private store : Store<AppState>,
+              private router : Router){}
 
   miFormulario : FormGroup = this.fb.group({
     nombre : ['',[Validators.required]],
@@ -27,6 +30,21 @@ export class PrincipalComponent {
 
   })
   guardar(){
-    this.store.dispatch(actions.crearTarea(this.miFormulario.value) );
+
+    if(!this.miFormulario.valid){
+      Swal.fire({
+        title: 'Debes llenar todos los campos',
+        icon: 'error',
+       })
+      return
+    }
+
+      this.store.dispatch(actions.crearTarea(this.miFormulario.value) );
+      Swal.fire({
+      title: 'Has agregado una nueva tarea!!',
+      icon: 'success',
+     })
+     this.router.navigate(['/listado-tareas'])
+
   }
 }

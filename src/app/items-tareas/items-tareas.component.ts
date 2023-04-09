@@ -4,6 +4,7 @@ import { AppState } from '../app.reducer';
 import { Store } from '@ngrx/store';
 import * as actions from '../principal/principal.actions'
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-items-tareas',
@@ -54,15 +55,29 @@ export class ItemsTareasComponent implements OnInit {
 
     eliminar(id :number){
       this.store.dispatch( actions.borrarTarea({id}) );
+      Swal.fire({
+        title: 'Se han eliminado la tarjeta',
+        icon: 'error',
+      })
+
     }
 
     guardarCambios(){
+
+      if(!this.miFormulario.valid){
+        Swal.fire({
+          title: 'Debes llenar todos los campos',
+          icon: 'error',
+         })
+        return
+      }
+
       this.store.dispatch( actions.editarTarea({id:this.tarea.id,...this.miFormulario.value}) );
-    }
+      Swal.fire({
+        title: 'Se han guardado los cambios',
+        icon: 'info',
+      })
 
-
-    guardarLocalStorage(){
-      localStorage.setItem("tarjetas",JSON.stringify(this.tarea.id))
     }
 
   }

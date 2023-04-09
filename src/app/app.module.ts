@@ -14,10 +14,6 @@ import { ItemsTareasComponent } from './items-tareas/items-tareas.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
