@@ -6,6 +6,15 @@ export const estadoInicial: Tareas[] = [
   new Tareas('Tarea1','Sacar la basura','Juan','2h','Inicial'),
   new Tareas('Tarea2','Sacar la basura','Juan','2h','Inicial'),
   new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
+  new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
+  new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
+  new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
+  new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
+  new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
+  new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
+  new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
+  new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
+  new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
 ]
 
 const _tareasReducer = createReducer(estadoInicial,

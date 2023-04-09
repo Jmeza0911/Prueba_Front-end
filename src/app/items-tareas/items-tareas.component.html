@@ -16,19 +16,20 @@
 
       <ng-template #editarlo class="editar__carta" style="width: 15rem;">
         <form action="" [formGroup]="miFormulario">
-        <p class="p__editar">Nombre: <input class="txtInputNombre" type="text" formControlName="nombre" maxlength="100"> </p>
-        <p class="p__editar">Acción: <input type="text" formControlName="accion" maxlength="100"> </p>
-        <p class="p__editar">Responsable: <input type="text" formControlName="responsable" maxlength="100"> </p>
-        <p class="p__editar">Duración: <input type="text" formControlName="duracion" maxlength="100"> </p>
-        <p class="p__editar-estado">Estado:
-          <select formControlName="estado"  class="formulario__select mr-2">
-            <option value="Inicio" selected>Inicio</option>
-            <option value="En Progreso" selected>En progreso</option>
-            <option value="QA" selected>En revisión</option>
-            <option value="Finalizada" selected>Finalizada</option>
-        </select> </p>
-        <button (click)="guardarCambios()" class="btn btn-primary mb-1">Guardar cambios <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" ></button>
-        <button  (click)="terminarEdicion()" class="btn btn-danger mb-2">Cancelar <img class="boton__eliminar-imagen" src="./assets/imagenes/boton_eliminar.png" alt=""></button>
+          <p class="p__editar">Nombre: <input class="txtInputNombre" type="text" formControlName="nombre" maxlength="100"> </p>
+          <p class="p__editar">Acción: <input type="text" formControlName="accion" maxlength="100"> </p>
+          <p class="p__editar">Responsable: <input type="text" formControlName="responsable" maxlength="100"> </p>
+          <p class="p__editar">Duración: <input type="text" formControlName="duracion" maxlength="100"> </p>
+          <p class="p__editar-estado">Estado:
+            <select formControlName="estado"  class="formulario__select mr-2">
+                <option value="Inicio" selected>Inicio</option>
+                <option value="En Progreso" selected>En progreso</option>
+                <option value="QA" selected>En revisión</option>
+                <option value="Finalizada" selected>Finalizada</option>
+            </select> </p>
+            <button (click)="guardarCambios()" class="btn btn-primary mb-1">Guardar cambios <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" ></button>
+
+            <button  (click)="terminarEdicion()" class="btn btn-danger mb-2">Cancelar <img class="boton__eliminar-imagen" src="./assets/imagenes/boton_eliminar.png" alt=""></button>
       </form>
       </ng-template>
 
