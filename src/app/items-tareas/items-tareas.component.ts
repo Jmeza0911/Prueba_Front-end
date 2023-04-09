@@ -18,27 +18,38 @@ export class ItemsTareasComponent  {
 
   constructor(private store:Store<AppState>){ }
 
-    // editar(){
-    //   this.editando = true;
-    //   this.listadoTareas
 
-    //   this.store.dispatch(
-    //     actions.editarTarea({
-    //       id: this.listadoTareas[0].id,
-    //       nombre:this.listadoTareas[0].nombre,
-    //     })
-    //   );
-    // }
+    editar(){
+      this.editando = true;
+      // this.txtInput.setValue( this.tarea.nombre );
+      // this.txtInput.setValue( this.tarea.accion );
+      // this.txtInput.setValue( this.tarea.responsable );
+      // this.txtInput.setValue( this.tarea.duracion );
+      // this.txtInput.setValue( this.tarea.estado );
 
-    editar(id :number){
+}
 
-    }
+terminarEdicion() {
+  this.editando = false;
+
+//   if( this.txtInput.invalid ) { return; }
+//   if( this.txtInput.value === this.tarea.nombre ) { return; }
+
+
+//   this.store.dispatch(
+//     actions.editar({
+//       id: this.tarea.id,
+//       texto: this.txtInput.value
+//     })
+//   );
+}
+
     eliminar(id :number){
       this.store.dispatch( actions.borrarTarea({id}) );
     }
 
     guardarLocalStorage(){
-
+      localStorage.setItem("tarjetas",JSON.stringify(this.tarea.id))
     }
 
   }

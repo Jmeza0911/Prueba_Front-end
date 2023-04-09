@@ -1,17 +1,37 @@
 
 <div class="contenedor grid">
-  <div class="card" style="width: 15rem;">
-    <div class="card-body">
-      <h5 class="card-title"><span>Nombre: </span> {{ tarea.nombre}} </h5>
-      <p class="card-text"><span>Acción: </span>{{tarea.accion}} </p>
-      <p class="card-text"><span>Responsable: </span>{{tarea.responsable}} </p>
-      <p class="card-text"><span>Duración: </span>{{tarea.duracion}} </p>
-      <p class="card-text"><span>Estado: </span>{{tarea.estado}} </p>
-      <button (click)="editar(tarea.id)" class="btn btn-warning mb-2">Editar  <img class="boton__editar-imagen" src="./assets/imagenes/doughnut.png" alt=""></button>
+  <div class="card" style="width: 15rem" >
+      <div *ngIf ="!editando ;else editarlo" class="card-body">
+        <h5 class="card-title"><span>Nombre: </span> {{ tarea.nombre}} </h5>
+        <p class="card-text"><span>Acción: </span>{{tarea.accion}} </p>
+        <p class="card-text"><span>Responsable: </span>{{tarea.responsable}} </p>
+        <p class="card-text"><span>Duración: </span>{{tarea.duracion}} </p>
+        <p class="card-text"><span>Estado: </span>{{tarea.estado}} </p>
 
-            <button  (click)="eliminar(tarea.id)" class="btn btn-danger mb-2">Eliminar <img class="boton__eliminar-imagen" src="./assets/imagenes/boton_eliminar.png" alt=""></button>
+        <button (click)="editar()" class="btn btn-warning mb-2">Editar  <img class="boton__editar-imagen" src="./assets/imagenes/doughnut.png" alt=""></button>
+        <button  (click)="eliminar(tarea.id)" class="btn btn-danger mb-2">Eliminar <img class="boton__eliminar-imagen" src="./assets/imagenes/boton_eliminar.png" alt=""></button>
+
       </div>
-    </div>
+
+      <ng-template #editarlo class="editar__carta" style="width: 15rem;">
+        <p class="p__editar">Nombre: <input type="text"> </p>
+        <p class="p__editar">Acción: <input type="text"> </p>
+        <p class="p__editar">Responsable: <input type="text"> </p>
+        <p class="p__editar">Duración: <input type="text"> </p>
+        <p class="p__editar">Estado:
+          <select formControlName="estado"  class="formulario__select mr-2">
+            <option value="Inicio" selected>Inicio</option>
+            <option value="En Progreso" selected>En progreso</option>
+            <option value="QA" selected>En revisión</option>
+            <option value="Finalizada" selected>Finalizada</option>
+        </select> </p>
+        <button  class="btn btn-primary mb-1">Guardar cambios <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" ></button>
+        <button  class="btn btn-danger mb-2">Cancelar <img class="boton__eliminar-imagen" src="./assets/imagenes/boton_eliminar.png" alt=""></button>
+      </ng-template>
+
+      </div>
+
+
 </div>
 
 

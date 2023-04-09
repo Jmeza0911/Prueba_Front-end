@@ -1,6 +1,16 @@
+.header{
+  display: flex;
+  margin-top: 1rem;
+  &.logo{
+    width: 5rem;
+    border-radius: 1rem;
+  }
+}
+
 h1{
   color: beige;
   margin-top: 2rem;
+  margin-left:1rem ;
 }
 
 .tareas__list{
@@ -9,10 +19,5 @@ h1{
   margin-bottom: 1rem;
   flex-wrap: wrap;
 
-
-}
-
-
-.btn-primary{
 
 }

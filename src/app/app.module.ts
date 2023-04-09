@@ -16,6 +16,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
   ],
   imports: [
+
     StoreModule.forRoot( appReducers ),
     BrowserModule,
     AppRoutingModule,

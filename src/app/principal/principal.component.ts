@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder,FormGroup } from '@angular/forms';
+import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { AppState } from '../app.reducer';
 import { Store } from '@ngrx/store';
 import * as actions from './principal.actions';
@@ -19,11 +19,11 @@ export class PrincipalComponent {
               private store : Store<AppState>){}
 
   miFormulario : FormGroup = this.fb.group({
-    nombre : [''],
-    accion : [''],
-    responsable : [''],
-    duracion : [''],
-    estado : ['5']
+    nombre : ['',[Validators.required]],
+    accion : ['',[Validators.required]],
+    responsable : ['',[Validators.required]],
+    duracion : ['',[Validators.required]],
+    estado : ['5',[Validators.required]]
 
   })
   guardar(){
