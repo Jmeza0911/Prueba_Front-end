@@ -21,65 +21,67 @@
 
 <body>
 
-  <div class="contenedor listado__tareas">
 
-    <div class="contenedor organizador">
-      <h3 class="organizador__titulo"> Registro de tareas</h3>
-        <form  (ngSubmit)="guardar()"
-              [formGroup]="miFormulario"
-               class="contenedor formulario">
+    <div class="contenedor listado__tareas" >
 
-          <p>
-            <label class="formulario__label ">Nombre: </label>
-            <input class="formulario__input"type="text" formControlName="nombre">
-          </p>
+      <div class="contenedor organizador">
+        <h3 class="organizador__titulo"> Registro de tareas</h3>
+          <form  (ngSubmit)="guardar()"
+                [formGroup]="miFormulario"
+                 class="contenedor formulario">
 
-          <p>
-            <label class="formulario__label">Acción: </label>
-            <input class="formulario__input" type="text" formControlName="accion">
-          </p>
+            <p>
+              <label class="formulario__label ">Nombre: </label>
+              <input class="formulario__input"type="text" formControlName="nombre" maxlength="100">
+            </p>
 
-          <p>
-            <label class="formulario__label">Responsable: </label>
-            <input class="formulario__input" type="text" formControlName="responsable">
-          </p>
+            <p>
+              <label class="formulario__label">Acción: </label>
+              <input class="formulario__input" type="text" formControlName="accion" maxlength="100">
+            </p>
 
-          <p>
-            <label class="formulario__label">Duración: </label>
-            <input class="formulario__input" type="text" formControlName="duracion">
-          </p>
+            <p>
+              <label class="formulario__label">Responsable: </label>
+              <input class="formulario__input" type="text" formControlName="responsable" maxlength="100">
+            </p>
 
-          <p class="formulario bloque">
-            <label class="formulario__label">Estado: </label>
-            <select formControlName="estado"  class="formulario__select">
-                <option value="Inicio" selected>Inicio</option>
-                <option value="En Progreso" selected>En progreso</option>
-                <option value="QA" selected>En revisión</option>
-                <option value="Finalizada" selected>Finalizada</option>
-                <option value="5"selected>Seleccione...</option>
-            </select>
-          </p>
+            <p>
+              <label class="formulario__label">Duración: </label>
+              <input class="formulario__input" type="text" formControlName="duracion" maxlength="100">
+            </p>
 
-            <P class="bloque">
-              <button class="boton__crear"
-                    (click)="guardar()"
-                    type="submit"
-                    routerLink="/listado-tareas">
-                    Crear Tarea
-                    <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" >
-            </button>
+            <p class="formulario bloque">
+              <label class="formulario__label">Estado: </label>
+              <select formControlName="estado"  class="formulario__select">
+                  <option value="Inicio" selected>Inicio</option>
+                  <option value="En Progreso" selected>En progreso</option>
+                  <option value="QA" selected>En revisión</option>
+                  <option value="Finalizada" selected>Finalizada</option>
+                  <option value="5"selected>Seleccione...</option>
+              </select>
+            </p>
+
+              <P class="bloque">
+                <button class="boton__crear"
+                      (click)="guardar()"
+                      type="submit"
+                      routerLink="/listado-tareas">
+                      Crear Tarea
+                      <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" >
+              </button>
 
 
-            </P>
+              </P>
 
-        </form>
+          </form>
 
-      </div>
+        </div>
 
-      <div >
-        <img class="imagen__form" src="./assets/imagenes/imagen__form.svg" alt="">
-      </div>
-  </div>
+        <div >
+          <img class="imagen__form" src="./assets/imagenes/imagen__form.svg" alt="">
+        </div>
+    </div>
+
 
 
 </body>

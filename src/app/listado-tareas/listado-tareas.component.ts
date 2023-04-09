@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../app.reducer';
 import { Tareas } from '../principal/models/tareas.model';
+import * as actions from '../principal/principal.actions'
 
 
 
@@ -29,11 +30,12 @@ export class ListadoTareasComponent implements OnInit {
 
     };
 
-
-    tumae(){
-      console.log(this.listadoTareas)
+    eliminarTodos(){
+      this.store.dispatch( actions.borrarTodos() );
     }
+
 }
+
 
 
 

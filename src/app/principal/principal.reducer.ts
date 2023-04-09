@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { crearTarea,editarTarea, borrarTarea} from './principal.actions';
+import { crearTarea,editarTarea, borrarTarea,borrarTodos} from './principal.actions';
 import { Tareas} from './models/tareas.model';
 
 export const estadoInicial: Tareas[] = [
@@ -8,23 +8,25 @@ export const estadoInicial: Tareas[] = [
   new Tareas('Tarea3','Sacar la basura','Juan','2h','Inicial'),
 ]
 
-
-
 const _tareasReducer = createReducer(estadoInicial,
   on(crearTarea, (state, { nombre,accion,responsable,duracion,estado }) =>
   [...state, new Tareas( nombre,accion,responsable,duracion,estado )  ] ),
   on (borrarTarea, ( state, { id } ) =>  state.filter( todo => todo.id !== id ) ),
-  on(editarTarea, (state, { id,nombre}) => {
+  on(borrarTodos, ( state ) => []),
+  on(editarTarea, (state, { id,nombre,accion,responsable,duracion,estado}) => {
+    return state.map(tarea => {
 
-    return state.map( todo => {
-
-      if ( todo.id === id  ) {
+      if ( tarea.id === id  ) {
         return {
-          ...todo,
-          nombre :nombre
+          ...tarea,
+          nombre :nombre,
+          accion :accion,
+          responsable :responsable,
+          duracion :duracion,
+          estado :estado,
         }
       } else {
-        return todo;
+        return tarea;
       }
 
     });

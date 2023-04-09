@@ -1,12 +1,13 @@
 
 <div class="header">
-  <img class ="header logo" src="./assets/imagenes/imagen__logo.jpg" alt="">
+  <a href=""><img class ="header logo" src="./assets/imagenes/imagen__logo.jpg" alt=""></a>
   <h1>
     Listado Tareas
   </h1>
 
 </div>
 
+<div class="animate__animated animate__backInLeft">
 
 <div class="tareas__list">
 
@@ -15,6 +16,7 @@
     </app-items-tareas>
 
   </div>
-
+</div>
 <a href="#" class="btn btn-primary mb-2" >Nueva tarjeta <img class="boton__imagen" src="./assets/imagenes/icono_boton_crear.png" ></a>
 
+<button (click)="eliminarTodos()"  class="btn btn-danger mb-2">Eliminar Todo<img class="boton__eliminar-imagen" src="./assets/imagenes/boton_eliminar.png" alt=""></button>
